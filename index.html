@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue computed 切換排序練習</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="app" class="container my-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>品名</th>
+          <th class="click" @click="reverseArry('price')">價格
+            <span class="icon isReverse" :class="{'inverse': isReverse}" v-if="sortItem == 'price'">
+              <i class="fas fa-angle-up text-success"></i>
+            </span>
+          </th>
+          <th class="click" @click="reverseArry('expiryDate')">到期日 
+            <span class="icon isReverse" :class="{'inverse': isReverse}" v-if="sortItem == 'expiryDate'">
+              <i class="fas fa-angle-up text-success"></i>
+            </span>
+          </th>
+        </tr>
+        <tr v-for="item in sortByData">
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.expiryDate }}</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js'></script>
+  <script src='https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js'></script>
+  <script src='https://use.fontawesome.com/releases/v5.0.8/js/regular.js'></script>
+  <script src='https://use.fontawesome.com/releases/v5.0.8/js/solid.js'></script>
+  <script  src="js/index.js"></script>
+</body>
+</html>

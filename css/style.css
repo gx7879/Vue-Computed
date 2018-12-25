@@ -1,0 +1,15 @@
+.table th.click {
+  cursor: pointer;
+}
+
+.table th.click {
+  cursor: pointer;
+}
+
+.icon {
+  display: inline-block;
+}
+.icon.inverse {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg)
+}
